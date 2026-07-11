@@ -148,10 +148,14 @@
             document.querySelector('.split-total').innerText = data.split_total ? data.split_total : "---";
             document.querySelector('.total-serv').innerText = Number(data.reg_serv) + Number(data.split_serv);
             document.querySelector('.total-unserv').innerText = Number(data.reg_unserv) + Number(data.split_unserv);
-            document.querySelector('.reg-serv').innerText = data.reg_serv + " item/s";
-            document.querySelector('.split-serv').innerText = data.split_serv + " item/s";
-            document.querySelector('.reg-unserv').innerText = data.reg_unserv + " item/s";
-            document.querySelector('.split-unserv').innerText = data.split_unserv + " item/s";
+            document.querySelector('.reg-serv').innerText = data.reg_serv ? data.reg_serv + " item/s" : 0
+             + " item/s";
+            document.querySelector('.split-serv').innerText = data.split_serv ? data.split_serv + " item/s" : 0
+             + " item/s";
+            document.querySelector('.reg-unserv').innerText = data.reg_unserv ? data.reg_unserv + " item/s" : 0
+             + " item/s";
+            document.querySelector('.split-unserv').innerText = data.split_unserv ? data.split_unserv + " item/s" : 0
+             + " item/s";
 
             serviceableChart.data.datasets[0].data = [data.reg_serv, data.split_serv];
             serviceableChart.update();

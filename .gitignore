@@ -1,0 +1,4 @@
+.env
+.git
+/vendor
+docker-entrypoint.sh
